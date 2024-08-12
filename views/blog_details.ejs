@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog List</title>
+</head>
+<style>
+    img {
+        max-width: 10%;
+        height: auto;
+    }
+</style>
+<body>
+<a href="http://localhost:3000/homepage">返回主页</a><br>
+<ul><h1><%= blog.blog_name%></h1>
+    <% blog.comments.forEach(comment => { %>
+        <li>
+            <%= comment.author%> : <%= comment.content%> <br>
+            <img src=<%=comment.picture%>>
+        </li>
+    <% }); %>
+</ul>
+</body>
+</html>

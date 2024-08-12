@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Activity</title>
+</head>
+<style>
+    img {
+        max-width: 10%;
+        height: auto;
+    }
+</style>
+<body>
+<a href="http://localhost:3000/homepage">返回主页</a><br>
+<ul><h1><%= user.username%> 的活跃情况</h1>
+    <% user.comments.forEach(comment => { %>
+        <li>
+            <%= comment.content%>：<img src=<%= comment.picture%>> at <%= comment.location%>
+        </li>
+    <% }); %>
+</ul>
+</body>
+</html>

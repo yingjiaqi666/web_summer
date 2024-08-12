@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cycles</title>
+    <style>
+        .cycle {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        img {
+            max-width: 10%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<a href="http://localhost:3000/homepage">返回主页</a><br>
+<div id="cycles"></div>
+
+<script>
+    fetch('/browse_cycles_update')
+        .then(response => response.json())
+        .then(data => {
+            const cyclesContainer = document.getElementById('cycles');
+            data.forEach(cycle => {
+                const cycleDiv = document.createElement('div');
+                cycleDiv.classList.add('cycle');
+                cycleDiv.innerHTML = `<strong>${cycle.cycle_name}</strong>: <img src=${cycle.picture} alt="图片地址错误">`;
+                cyclesContainer.appendChild(cycleDiv);
+            });
+        })
+        .catch(error => console.error('Error fetching comments:', error));
+</script>
+</body>
+</html>

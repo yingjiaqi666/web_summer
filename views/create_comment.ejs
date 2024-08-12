@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发表评论</title>
+</head>
+<body>
+<h1>发表评论</h1>
+<form action="/create_comment" method="post">
+    <input type="text" name="cycle_name" placeholder="兴趣圈名" required><br>
+    <input type="text" name="blog_name" placeholder="兴趣贴标题" required><br>
+    <input type="text" name="content" placeholder="评论内容" required><br>
+    <input type="text" name="picture" placeholder="图片地址" required><br>
+    <button type="submit">发表</button>
+</form>
+<br>
+<a href="http://localhost:3000/homepage">返回主页</a>
+</body>
+</html>
